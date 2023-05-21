@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>InferenceViewer</title>
+        <link rel="stylesheet" href="/src/style.css">
+
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    crossorigin=""></script>
+    </head>
+    <body>
+    <script defer src="/src/index.js"></script>
+
+    <div class="parent">
+        <div class="mapPane" name="mapElements">
+            <div id="map"></div>
+
+            <br>
+            <input type="file" id="trajFile" name="trajFilename">
+            <button onclick="server.submitFile();">submit</button>
+            <br>
+            
+            <div><b>clustering parameters</b> <a href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html" title="based on the DBSCAN clustering algorithm from the scikit-learn library">ⓘ</a></div>
+            <div class="sliderDiv">
+                <label for="minSamples">minimum samples</label><br>
+                <input type="range" min="1" max="50" value="7" id="minSamples" 
+                    oninput="this.nextElementSibling.value = this.value;"
+                    onchange="updateInference()"
+                >
+                <output>7</output>
+            </div>
+            <div class="sliderDiv">
+                <label for="minSamples">epsilon</label><br>
+                <input type="range" min="1" max="20" value="2" id="epsilon" 
+                    oninput="this.nextElementSibling.value = this.value;"
+                    onchange="updateInference()"
+                >
+                <output>2</output>/6471
+            </div>
+            
+            <br>
+
+        </div>
+        <div class="poiPane" name="PoiListContainer">
+            <div class="poiListTitle"><h2>points of interest</h2></div>
+            <div class="poiList">
+
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

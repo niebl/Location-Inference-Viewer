@@ -1,0 +1,102 @@
+#map { 
+    height: 600px; 
+    max-height: 80%;
+    border-radius: 12px;
+}
+
+.parent { 
+    display: flex;
+    margin: 26px;
+}
+
+.mapPane {
+    width: 100%;
+    padding: 6px;
+}
+
+.poiPane { 
+    width: 380px;
+    padding: 6px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.poiList { 
+    display: flex;
+    flex-direction: column;
+}
+
+.poiListTitle {
+    text-align: center;
+    margin-bottom: 6px;
+    background-color: #193347;
+    color: white;
+    font-family: sans-serif;
+    border-radius: 12px;
+    padding: 3px;
+}
+
+.poiListItem {
+    background-color: #4c7796;
+    color: white;
+    font-family: sans-serif;
+    border-radius: 12px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 12px;
+    margin-bottom: 4px;
+
+    transition: margin-top 0.2s, margin-bottom 0.2s, color 0.2s;
+}
+
+.poiWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.poiContentWrapper {
+    width: 100%;
+}
+
+.removeButton {
+    font-weight: bold;
+    text-align: center;
+    height: 24px;
+    width: 24px;
+    margin-right: 12px;
+    margin-top: 6px;
+
+    cursor: pointer;
+}
+
+.selected {
+
+    background-color: #53927b;
+    color: white;
+    font-family: sans-serif;
+    border-radius: 12px;
+    
+    transition: margin-top 0.2s, margin-bottom 0.2s, color 0.2s;
+
+    box-shadow:
+        0 0 20px -5px rgb(15, 31, 20);
+
+    margin-top: 4px;
+    margin-bottom: 8px;
+
+    padding-left: 12px;
+}
+
+@media screen and (max-width: 600px){
+    [type="range"]{
+        width: 100%;
+    }
+    .parent {
+        flex-direction: column;
+    }
+    #map{ height: 50vh;}
+    .mapPane {width: 100%;}
+    .poiPane { width: 100%;}
+}
